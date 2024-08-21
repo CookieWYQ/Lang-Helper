@@ -1,0 +1,40 @@
+{
+    "jar_path": "fy_jar/1.jar",
+    "USE_NUM_KEY": false,
+    "color_num_key": {
+        "1": "white",
+        "2": "red",
+        "3": "green",
+        "4": "blue",
+        "5": "yellow",
+        "6": "purple",
+        "7": "orange",
+        "8": "pink",
+        "9": "gray",
+        "0": "light green"
+    },
+    "copy_key": "c",
+    "USE_COPY_TIP": true,
+    "top_find_key": "r",
+    "all_find_mark_key": "q",
+    "all_find_mark_color": "#aeba45",
+    "USE_BUTTON_KEY": true,
+    "button_key": {
+        "5": "white",
+        "4": "red"
+    },
+    "USE_MOUSE_WHEEL": true,
+    "USE_KEY_TO_TURN_and_DOWN": true,
+    "KEY_TO_TURN_and_DOWN": {
+        "KEY_TO_DOWN": "w",
+        "KEY_TO_UP": "s"
+    },
+    "reload_key": "l",
+    "USE_RELOAD_TIP": true,
+    "save_key": "i",
+    "USE_SAVE_TIP": true,
+    "interval": 40,
+    "USE_SAVE_TIP_WHEN_SETTING_CLOSE": false,
+    "USE_SAVE_TIP_WHEN_MAIN_CLOSE": false,
+    "translate_api": "sogou"
+}
