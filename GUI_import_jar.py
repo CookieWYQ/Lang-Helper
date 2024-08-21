@@ -123,6 +123,7 @@ def extract_jar_all(path: str) -> None:  # TODO: 优化
     t = os.path.basename((glob.glob(f'fy_/{os.path.basename(path)}/assets/*')[0]))
     l1 = glob.glob(f'fy_/{os.path.basename(path)}/assets/{t}/lang/*.json') + glob.glob(f'fy_/{os.path.basename(path)}/assets/{t}/lang/*.lang')
     show_file_win = tk.Toplevel(win)
+    show_file_win.resizable(False, False)
     show_file_win.title("请选择主语言和对比语言")
     show_file_win.geometry("400x200")
     show_file_win.protocol("WM_DELETE_WINDOW", lambda: None)
@@ -635,7 +636,7 @@ def show_setting_window():
 
     copy_key_setting_button.place(x=10, y=170)
 
-    copy_key_show_label = tk.Label(setting_window, text=f"当前复制热键：{config["copy_key"]}")
+    copy_key_show_label = tk.Label(setting_window, text=f"当前复制热键：{config['copy_key']}")
     copy_key_show_label.place(x=10, y=140)
 
     def if_USE_COPY_TIP__check():
@@ -649,7 +650,7 @@ def show_setting_window():
                                             offvalue=0)
     if_USE_COPY_TIP_ckbtn.place(x=10, y=210)
 
-    top_find_key_show_label = tk.Label(setting_window, text=f"当前置顶搜索热键：{config["top_find_key"]}")
+    top_find_key_show_label = tk.Label(setting_window, text=f"当前置顶搜索热键：{config['top_find_key']}")
     top_find_key_show_label.place(x=10, y=240)
 
     def ask_top_find_key():
@@ -670,7 +671,7 @@ def show_setting_window():
 
     top_find_key_setting_button.place(x=10, y=270)
 
-    all_find_mark_key_show_label = tk.Label(setting_window, text=f"当前全选搜索热键：{config["all_find_mark_key"]}")
+    all_find_mark_key_show_label = tk.Label(setting_window, text=f"当前全选搜索热键：{config['all_find_mark_key']}")
     all_find_mark_key_show_label.place(x=10, y=300)
 
     def ask_all_find_mark_key():
@@ -692,7 +693,7 @@ def show_setting_window():
     all_find_mark_key_setting_button.place(x=10, y=330)
 
     all_find_mark_color_show_label = tk.Label(setting_window,
-                                              text=f"当前全局搜索匹配颜色：{config["all_find_mark_color"]}")
+                                              text=f"当前全局搜索匹配颜色：{config['all_find_mark_color']}")
     all_find_mark_color_show_label.place(x=10, y=360)
 
     def ask_all_find_mark_color():
@@ -740,7 +741,7 @@ def show_setting_window():
         key_color_setting_buttons: dict[int, tk.Button] = {}
 
         mouse_key_5_color_label = tk.Label(button_key_setting_window,
-                                           text=f"鼠标5键颜色:{config["color_num_key"]["5"]}",
+                                           text=f"鼠标5键颜色:{config['color_num_key']['5']}",
                                            bg=config["color_num_key"]["5"], fg="black", font=("Arial", 10))
         mouse_key_5_color_label.place(x=10, y=10)
         key_color_labels[5] = mouse_key_5_color_label
@@ -757,7 +758,7 @@ def show_setting_window():
         key_color_setting_buttons[5] = mouse_key_5_color_setting_button
 
         mouse_key_6_color_label = tk.Label(button_key_setting_window,
-                                           text=f"鼠标6键颜色:{config["color_num_key"]["6"]}",
+                                           text=f"鼠标6键颜色:{config['color_num_key']['6']}",
                                            bg=config["color_num_key"]["6"], fg="black", font=("Arial", 10))
         mouse_key_6_color_label.place(x=10, y=70)
         key_color_labels[6] = mouse_key_6_color_label
@@ -822,7 +823,7 @@ def show_setting_window():
     添加对鼠标按键标记颜色的设置
     """
 
-    reload_key_show_label = tk.Label(setting_window, text=f"当前重载热键：{config["reload_key"]}")
+    reload_key_show_label = tk.Label(setting_window, text=f"当前重载热键：{config['reload_key']}")
     reload_key_show_label.place(x=10, y=520)
 
     def ask_reload_key():
@@ -857,7 +858,7 @@ def show_setting_window():
                                               offvalue=0)
     if_USE_RELOAD_TIP_ckbtn.place(x=10, y=590)
 
-    save_key_show_label = tk.Label(setting_window, text=f"当前保存热键：{config["save_key"]}")
+    save_key_show_label = tk.Label(setting_window, text=f"当前保存热键：{config['save_key']}")
     save_key_show_label.place(x=10, y=620)
 
     def ask_save_key():
@@ -891,7 +892,7 @@ def show_setting_window():
                                             offvalue=0)
     if_USE_SAVE_TIP_ckbtn.place(x=10, y=680)
 
-    interval_show_label = tk.Label(setting_window, text=f"当前间隔：{config["interval"]}")
+    interval_show_label = tk.Label(setting_window, text=f"当前间隔：{config['interval']}")
     interval_show_label.place(x=10, y=710)
 
     def ask_interval():

@@ -1,9 +1,10 @@
 import os
+from typing import Union
 
 __all__ = ['LangOperation', 'if_skip']
 
 
-def if_skip(key: str | None):
+def if_skip(key: Union[str, None]):
     if key is None:
         return True
 

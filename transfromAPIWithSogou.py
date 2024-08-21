@@ -1,5 +1,10 @@
 import requests
-from bs4 import BeautifulSoup
+try:
+    from bs4 import BeautifulSoup
+except ImportError:
+    import pip
+    pip.main(['install', 'bs4'])
+    from bs4 import BeautifulSoup
 
 ERROR = 'ERROR'
 
